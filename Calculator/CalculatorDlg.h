@@ -14,7 +14,7 @@ public:
 
 // 对话框数据
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_CALCULATOR_DIALOG };
+	enum { IDD = IDD_DIALOG_CALCULATOR };
 #endif
 
 	protected:
@@ -31,4 +31,35 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+
+//////////////////////////////////////////////////////////////////////////
+public:
+	//Number
+	afx_msg void OnBnClickedButtonNum0();
+	afx_msg void OnBnClickedButtonNum1();
+	afx_msg void OnBnClickedButtonNum2();
+	afx_msg void OnBnClickedButtonNum3();
+	afx_msg void OnBnClickedButtonNum4();
+	afx_msg void OnBnClickedButtonNum5();
+	afx_msg void OnBnClickedButtonNum6();
+	afx_msg void OnBnClickedButtonNum7();
+	afx_msg void OnBnClickedButtonNum8();
+	afx_msg void OnBnClickedButtonNum9();
+	afx_msg void OnBnClickedButtonLeftBracket();
+	afx_msg void OnBnClickedButtonRightBracket();
+	afx_msg void OnBnClickedButtonDot();
+	//Operator
+	afx_msg void OnBnClickedButtonDivide();
+	afx_msg void OnBnClickedButtonMultiple();
+	afx_msg void OnBnClickedButtonSubstract();
+	afx_msg void OnBnClickedButtonAdd();
+	afx_msg void OnBnClickedButtonEqual();
+	//Other
+	afx_msg void OnBnClickedButtonBack();
+	afx_msg void OnBnClickedButtonClear();
+
+
+
+	CStatic				m_CStaticInputString;
+	CString				m_InputString;
 };

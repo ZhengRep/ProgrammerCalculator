@@ -16,7 +16,6 @@
 #define IDC_BUTTON_NUM4                 1005
 #define IDC_BUTTON_NUM5                 1006
 #define IDC_BUTTON_NUM6                 1007
-#define IDC_EDIT1                       1008
 #define IDC_STATIC_DEC                  1009
 #define IDC_BUTTON_NUM1                 1011
 #define IDC_BUTTON_NUM2                 1012
@@ -25,8 +24,14 @@
 #define IDC_BUTTON_DIVIDE               1015
 #define IDC_BUTTON_MULTIPLE             1016
 #define IDC_BUTTON_SUBSTRACT            1017
-#define IDC_BUTTON_ADDITION             1018
+#define IDC_BUTTON_ADD                  1018
 #define IDC_BUTTON_EQUAL                1024
+#define IDC_BUTTON_BACK                 1025
+#define IDC_BUTTON_CLEAR                1026
+#define IDC_BUTTON_LEFTBRACKET          1027
+#define IDC_BUTTON_RIGHTBRACKET         1028
+#define IDC_BUTTON_NUM10                1029
+#define IDC_BUTTON_DOT                  1029
 
 // Next default values for new objects
 // 

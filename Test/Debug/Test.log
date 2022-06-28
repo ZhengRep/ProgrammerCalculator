@@ -1,0 +1,2 @@
+﻿  Test.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.28.29333\atlmfc\include\afxstr.h(24,1): fatal error C1189: #error:  afxstr.h can only be used in MFC projects.  Use atlstr.h

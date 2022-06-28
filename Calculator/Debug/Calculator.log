@@ -1,1 +1,6 @@
-﻿  Calculator.vcxproj -> D:\Code\vs2019\ProgrammerCalculator\Debug\Calculator.exe
+﻿  Compiler.cpp
+D:\Code\vs2019\ProgrammerCalculator\Calculator\Compiler.cpp(7,27): warning C4477: “sprintf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“CString”
+D:\Code\vs2019\ProgrammerCalculator\Calculator\Compiler.cpp(7,2): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  LexicalAnalyzer.cpp
+D:\Code\vs2019\ProgrammerCalculator\Calculator\LexicalAnalyzer.cpp(41,1): fatal error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "pch.h"”?
+  正在生成代码...
