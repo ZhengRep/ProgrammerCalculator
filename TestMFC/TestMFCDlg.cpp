@@ -8,6 +8,8 @@
 #include "TestMFCDlg.h"
 #include "afxdialogex.h"
 
+#include "../Calculator/Compiler.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -168,5 +170,7 @@ void CAboutDlg::OnBnClickedButtonTest()
 
 void CTestMFCDlg::OnBnClickedButtonTestmain()
 {
-	TRACE("TestMain\n");
+	TRACE("TestCStringToAnsi\n");
+	Compiler compiler =  Compiler(CString("1+23*4Hell"));
+
 }

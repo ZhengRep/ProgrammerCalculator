@@ -19,8 +19,8 @@ class LexicalAnalyzer
 public:
 	LexicalAnalyzer(CString LexicalString);
 	~LexicalAnalyzer();
-	TOKEN GetNextToken();
-	CString SliceACharater();
+	//TOKEN GetNextToken();
+	char SliceACharater();
 
 private:
 	PTOKEN	SymbolTable;

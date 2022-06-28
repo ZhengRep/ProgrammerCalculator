@@ -1,4 +1,3 @@
-﻿  TestMFC.cpp
-  TestMFCDlg.cpp
-  正在生成代码...
-  TestMFC.vcxproj -> D:\Code\vs2019\ProgrammerCalculator\Debug\TestMFC.exe
+﻿TestMFCDlg.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall Compiler::Compiler(class ATL::CStringT<wchar_t,class StrTraitMFC_DLL<wchar_t,class ATL::ChTraitsCRT<wchar_t> > >)" (??0Compiler@@QAE@V?$CStringT@_WV?$StrTraitMFC_DLL@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@@Z)，函数 "public: void __thiscall CTestMFCDlg::OnBnClickedButtonTestmain(void)" (?OnBnClickedButtonTestmain@CTestMFCDlg@@QAEXXZ) 中引用了该符号
+TestMFCDlg.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall Compiler::~Compiler(void)" (??1Compiler@@QAE@XZ)，函数 "public: void __thiscall CTestMFCDlg::OnBnClickedButtonTestmain(void)" (?OnBnClickedButtonTestmain@CTestMFCDlg@@QAEXXZ) 中引用了该符号
+D:\Code\vs2019\ProgrammerCalculator\Debug\TestMFC.exe : fatal error LNK1120: 2 个无法解析的外部命令

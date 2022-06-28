@@ -10,25 +10,25 @@ LexicalAnalyzer::~LexicalAnalyzer()
 {
 }
 
-TOKEN LexicalAnalyzer::GetNextToken()
-{
-	//Add Token to SymbolTable
-	TOKEN token;
-	char character = SliceACharater();
-	//char peek = (char)(m_LexicalString.Left(1)); //No Analysize Lexical Error e.g. ** (*, later to sytax analysize
-	/*switch (character)
-	{
-	case :
-	{
-
-		break;
-	}
-	default:
-		break;
-	}*/
-
-	
-}
+//TOKEN LexicalAnalyzer::GetNextToken()
+//{
+//	//Add Token to SymbolTable
+//	TOKEN token;
+//	char character = SliceACharater();
+//	//char peek = (char)(m_LexicalString.Left(1)); //No Analysize Lexical Error e.g. ** (*, later to sytax analysize
+//	/*switch (character)
+//	{
+//	case :
+//	{
+//
+//		break;
+//	}
+//	default:
+//		break;
+//	}*/
+//	return token;
+//	
+//}
 
 char LexicalAnalyzer::SliceACharater()
 {
@@ -36,5 +36,6 @@ char LexicalAnalyzer::SliceACharater()
 	CString str(m_LexicalString.Left(1));	
 	m_LexicalString.Delete(0, 1);
 	return str;*/
+	return 0;
 	
 }
