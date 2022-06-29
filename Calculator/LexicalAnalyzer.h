@@ -6,25 +6,37 @@
 typedef struct _TOKEN
 {
 	char Type;
-	union Attribute
+	union _Attribute
 	{
-		int Value;			//÷µ
-		char Lexval;	//¥ Àÿ
-	};
-	_TOKEN* Next;
+		char Lexval;			//¥ Àÿ
+		int Value;				//÷µ
+	}Attribute;
 }TOKEN, * PTOKEN;
+
+typedef struct _SYMBOLNODE
+{
+	int id;
+	TOKEN token;
+	_SYMBOLNODE* Next;
+}SYMBOLNODE, *PSYMBOLNODE;
 
 class LexicalAnalyzer
 {
 public:
 	LexicalAnalyzer(CString LexicalString);
 	~LexicalAnalyzer();
-	//TOKEN GetNextToken();
-	char SliceACharater();
+	TOKEN GetNextToken();
+
+
+	PSYMBOLNODE	SymbolTableHeader;
 
 private:
-	PTOKEN	SymbolTable;
-	CString		m_LexicalString;
+	char SliceACharater();
+	int GetTokenId();
+	void InsertNodeToSymbolTable(PSYMBOLNODE pSymbolNode);
 
+	CString		m_LexicalString;
+	static int m_IdValue;
 };
 
+int LexicalAnalyzer::m_IdValue = 0;

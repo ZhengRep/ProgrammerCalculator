@@ -7,7 +7,7 @@ public:
 
 
 private:
-	char*			m_CompileString;
+	CString			m_CompileString;
 	
 };
 

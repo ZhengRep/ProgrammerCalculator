@@ -81,7 +81,6 @@ BEGIN_MESSAGE_MAP(CCalculatorDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_NUM9, &CCalculatorDlg::OnBnClickedButtonNum9)
 	ON_BN_CLICKED(IDC_BUTTON_LEFTBRACKET, &CCalculatorDlg::OnBnClickedButtonLeftBracket)
 	ON_BN_CLICKED(IDC_BUTTON_RIGHTBRACKET, &CCalculatorDlg::OnBnClickedButtonRightBracket)
-	ON_BN_CLICKED(IDC_BUTTON_DOT, &CCalculatorDlg::OnBnClickedButtonDot)
 	//Operator Button
 	ON_BN_CLICKED(IDC_BUTTON_DIVIDE, &CCalculatorDlg::OnBnClickedButtonDivide)
 	ON_BN_CLICKED(IDC_BUTTON_MULTIPLE, &CCalculatorDlg::OnBnClickedButtonMultiple)
