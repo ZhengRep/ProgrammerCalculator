@@ -2,6 +2,7 @@
 // CalculatorDlg.cpp: 实现文件
 //
 #include "pch.h"
+#include "../Calculator/LexicalAnalyzer.h"
 #include "Compiler.h"
 #include "framework.h"
 #include "Calculator.h"
@@ -184,13 +185,20 @@ HCURSOR CCalculatorDlg::OnQueryDragIcon()
 void CCalculatorDlg::OnBnClickedButtonEqual()
 {
 	//ToCompile
-	if (!m_InputString.GetLength())
+	/*if (!m_InputString.GetLength())
 	{
 		MessageBox(_T("Please input a expression!"), _T("Tips"), 0);
 	}
 	else
 	{
 		Compiler compiler =  Compiler(m_InputString);
+	}*/
+	//ToTest
+	//CString str(_T("(1-2)*33/5"));
+	LexicalAnalyzer lexicalAnalyzer(_T("(1-2)*33/5"));
+	while (true)
+	{
+		PTOKEN token = lexicalAnalyzer.GetNextToken();
 	}
 }
 

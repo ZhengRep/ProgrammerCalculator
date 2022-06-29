@@ -16,7 +16,7 @@ typedef struct _TOKEN
 typedef struct _SYMBOLNODE
 {
 	int id;
-	TOKEN token;
+	PTOKEN token;
 	_SYMBOLNODE* Next;
 }SYMBOLNODE, *PSYMBOLNODE;
 
@@ -25,10 +25,10 @@ class LexicalAnalyzer
 public:
 	LexicalAnalyzer(CString LexicalString);
 	~LexicalAnalyzer();
-	TOKEN GetNextToken();
+	PTOKEN GetNextToken();
 
 
-	PSYMBOLNODE	SymbolTableHeader;
+	PSYMBOLNODE	SymbolTableHeader = nullptr;
 
 private:
 	char SliceACharater();
@@ -39,4 +39,3 @@ private:
 	static int m_IdValue;
 };
 
-int LexicalAnalyzer::m_IdValue = 0;

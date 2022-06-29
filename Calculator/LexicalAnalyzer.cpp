@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "LexicalAnalyzer.h"
 
+int LexicalAnalyzer::m_IdValue = 0;
+
 LexicalAnalyzer::LexicalAnalyzer(CString LexicalString)
 {
 	m_LexicalString = LexicalString;
@@ -10,46 +12,46 @@ LexicalAnalyzer::~LexicalAnalyzer()
 {
 }
 
-TOKEN LexicalAnalyzer::GetNextToken()
+PTOKEN LexicalAnalyzer::GetNextToken()
 {
 	//Add Token to SymbolTable
-	TOKEN token;
-	SYMBOLNODE symbolNode;
+	PTOKEN ptoken = new TOKEN;
+	PSYMBOLNODE psymbolNode = new SYMBOLNODE;
 	char character = SliceACharater();
 	if (!isdigit(character))
 	{
-		token.Type = Operator;
+		ptoken->Type = Operator;
 		//recognize * / + - £¨ £©
 		switch (character)
 		{
 		case '*':
 		{
-			token.Attribute.Lexval = '*';
+			ptoken->Attribute.Lexval = '*';
 			break;
 		}
 		case '/':
 		{
-			token.Attribute.Lexval = '/';
+			ptoken->Attribute.Lexval = '/';
 			break;
 		}
 		case '-':
 		{
-			token.Attribute.Lexval = '-';
+			ptoken->Attribute.Lexval = '-';
 			break;
 		}
 		case '+':
 		{
-			token.Attribute.Lexval = '+';
+			ptoken->Attribute.Lexval = '+';
 			break;
 		}
 		case '(':
 		{
-			token.Attribute.Lexval = '(';
+			ptoken->Attribute.Lexval = '(';
 			break;
 		}
 		case ')':
 		{
-			token.Attribute.Lexval = ')';
+			ptoken->Attribute.Lexval = ')';
 			break;
 		}
 		default:
@@ -59,7 +61,7 @@ TOKEN LexicalAnalyzer::GetNextToken()
 	}
 	else
 	{
-		token.Type = Digit;
+		ptoken->Type = Digit;
 		int v = 0;
 		char peek = (char)(LPCTSTR) m_LexicalString.Left(1);
 		while (isdigit(peek))
@@ -68,21 +70,22 @@ TOKEN LexicalAnalyzer::GetNextToken()
 			v += atoi((const char*)character);
 			character = SliceACharater();
 		}
-		token.Attribute.Value = v;
+		ptoken->Attribute.Value = v;
 	}
-	symbolNode.id = GetTokenId();
-	symbolNode.token = token;
-	symbolNode.Next = nullptr;
-	InsertNodeToSymbolTable(&symbolNode);
-	return token;
+	psymbolNode->id = GetTokenId();
+	psymbolNode->token = ptoken;
+	psymbolNode->Next = nullptr;
+	InsertNodeToSymbolTable(psymbolNode);
+	return ptoken;
 }
 
-char LexicalAnalyzer::SliceACharater()
+char* LexicalAnalyzer::SliceACharater()
 {
 	if (!m_LexicalString.GetLength()) return '!'; //ÓÃ¸ÐÌ¾×Ö·û
-	CString str(m_LexicalString.Left(1));	
+	CStringA str(m_LexicalString.Left(1));	
 	m_LexicalString.Delete(0, 1);
-	return (char)(LPCTSTR)str;
+	const char* str2 = str;
+	return str2;
 }
 
 int LexicalAnalyzer::GetTokenId()
@@ -93,6 +96,6 @@ int LexicalAnalyzer::GetTokenId()
 void LexicalAnalyzer::InsertNodeToSymbolTable(PSYMBOLNODE pSymbolNode)
 {
 	PSYMBOLNODE p = SymbolTableHeader;
-	while (!p->Next) p = p->Next;
+	while (p  && p->Next) p = p->Next;
 	p->Next = pSymbolNode;
 }
